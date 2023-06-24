@@ -1,0 +1,20 @@
+﻿<Window x:Class="CPU_Benchmark.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CPU_Benchmark"
+        mc:Ignorable="d"
+        Title="CPU Benchmark" Height="450" Width="800">
+    <StackPanel>
+        <Label Content="CPU Benchmark" FontSize="45" FontStyle="Normal" FontWeight="ExtraBold"/>
+        <Label Content="Please enter your CPU:" FontSize="18" FontStyle="Normal" FontWeight="Bold"/>
+        <TextBox x:Name="name" FontSize="20" Text=" "/>
+        <RadioButton x:Name="singleCore" Content="Single Core" FontSize="15" IsChecked="True" />
+        <RadioButton x:Name="multiCore" Content="Multi Core" FontSize="15"/>
+        <Button x:Name="start" Content="Start" Click="start_Click" FontSize="20"/>
+        <ProgressBar x:Name="bar" Minimum="0" Maximum="100"  Height="40"/>
+        <Label Content="Result: " FontSize="18"/>
+        <TextBlock x:Name="result" Text="" FontSize="19"/>
+    </StackPanel>
+</Window>
