@@ -5,16 +5,18 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CPU_Benchmark"
         mc:Ignorable="d"
-        Title="CPU Benchmark" Height="450" Width="800">
+        Title="CPU Benchmark" Height="450" Width="800"
+        Background="White"
+        x:Name="window">
     <StackPanel>
-        <Label Content="CPU Benchmark" FontSize="45" FontStyle="Normal" FontWeight="ExtraBold"/>
-        <Label Content="Please enter your CPU:" FontSize="18" FontStyle="Normal" FontWeight="Bold"/>
-        <TextBox x:Name="name" FontSize="20" Text=" "/>
+        <Label x:Name="cpu" Content="CPU Benchmark" FontSize="45" FontStyle="Normal" FontWeight="ExtraBold"/>
+        <Label x:Name="enter" Content="Please enter your CPU:" FontSize="18" FontStyle="Normal" FontWeight="Bold"/>
+        <TextBox x:Name="name" FontSize="20"/>
         <RadioButton x:Name="singleCore" Content="Single Core" FontSize="15" IsChecked="True" />
         <RadioButton x:Name="multiCore" Content="Multi Core" FontSize="15"/>
         <Button x:Name="start" Content="Start" Click="start_Click" FontSize="20"/>
         <ProgressBar x:Name="bar" Minimum="0" Maximum="100"  Height="40"/>
-        <Label Content="Result: " FontSize="18"/>
-        <TextBlock x:Name="result" Text="" FontSize="19"/>
+        <Label x:Name="result" Content="Result: " FontSize="18"/>
+        <Button x:Name="mode" Content="Dark mode" Click="mode_Click" HorizontalAlignment="Left"/>
     </StackPanel>
 </Window>

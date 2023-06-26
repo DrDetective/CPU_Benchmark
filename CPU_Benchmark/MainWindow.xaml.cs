@@ -16,6 +16,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using CPU_Benchmark;
 
 namespace CPU_Benchmark
 {
@@ -28,21 +29,24 @@ namespace CPU_Benchmark
         {
             InitializeComponent();
         }
-
-        private void start_Click(object sender, RoutedEventArgs e)
+        private void Loadbar()
         {
-            Stopwatch stops = new Stopwatch();
-            float single = 100000;
-            float multi = 400000;
-            stops.Start();
-            if (name.Text != string.Empty) { MessageBox.Show("Dělej zadej něco"); return; }
-            for (int i = 0; i < 100; i+=10)
+            for (int i = 0; i < 100; i += 10)
             {
                 bar.Value += i;
                 Thread.Sleep(700);
             }
+        }
+        private void start_Click(object sender, RoutedEventArgs e)
+        {
+            if (name.Text.ToString() != string.Empty == false) { MessageBox.Show("Dělej zadej něco"); return; }
+            Stopwatch stops = new Stopwatch();
+            float single = 100000;
+            float multi = 400000;
+            stops.Start();
             if (singleCore.IsChecked == true)
             {
+                Loadbar();
                 for (int i = 0; i < single; i++)
                 {
                     for (int j = 0; j < i / 2; j++)
@@ -53,6 +57,7 @@ namespace CPU_Benchmark
             }
             else if (multiCore.IsChecked == true)
             {
+                Loadbar();
                 for (int i = 0; i < multi; i++)
                 {
                     for (int j = 0; j < i /2; j++)
@@ -68,8 +73,18 @@ namespace CPU_Benchmark
                 Random gen = new Random();
                 int rng = gen.Next(0,10000);
                 bar.Value = 0;
-                result.Text = $" {rng} points";
+                result.Content = $" {rng} points";
             }
+        }
+        private void mode_Click(object sender, RoutedEventArgs e)
+        {
+            window.Background = Brushes.Black;
+            cpu.Foreground = Brushes.White;
+            enter.Foreground = Brushes.White;
+            singleCore.Foreground = Brushes.White;
+            multiCore.Foreground = Brushes.White;
+            result.Foreground = Brushes.White;
+            mode.Foreground = Brushes.Black;
         }
     }
 }
