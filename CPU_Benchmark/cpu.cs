@@ -20,11 +20,16 @@ using CPU_Benchmark;
 
 namespace CPU_Benchmark
 {
-    public partial class cpu
+    public partial class cpu : Window
     {
-        public static void check()
+        public static void check(MainWindow widow)
         {
-        
+            string[] amd = { "negr"};
+            string[] intel = {"" };
+            if (widow.name.Text.Contains(amd) || widow.name.Text.Contains(intel))
+            {
+
+            }
         }
     }
 }

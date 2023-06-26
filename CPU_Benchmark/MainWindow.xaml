@@ -15,7 +15,7 @@
         <RadioButton x:Name="singleCore" Content="Single Core" FontSize="15" IsChecked="True" />
         <RadioButton x:Name="multiCore" Content="Multi Core" FontSize="15"/>
         <Button x:Name="start" Content="Start" Click="start_Click" FontSize="20"/>
-        <ProgressBar x:Name="bar" Minimum="0" Maximum="100"  Height="40"/>
+        <ProgressBar x:Name="bar" Minimum="0" Maximum="100" Height="40"/>
         <Label x:Name="result" Content="Result: " FontSize="18"/>
         <Button x:Name="mode" Content="Dark mode" Click="mode_Click" HorizontalAlignment="Left"/>
     </StackPanel>
