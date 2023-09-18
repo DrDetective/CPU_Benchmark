@@ -77,7 +77,7 @@ namespace CPU_Benchmark
             }
         }
         int Isclicked = 0;
-        private void mode_Click(object sender, RoutedEventArgs e)
+        private void mode_Click(object sender, RoutedEventArgs e) //nějak to funguje radši na to šahat nebudu
         {
             Button btn = (Button)sender;
             if(Isclicked == 0)
