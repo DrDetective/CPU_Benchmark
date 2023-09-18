@@ -76,15 +76,38 @@ namespace CPU_Benchmark
                 result.Content = $" {rng} points";
             }
         }
+        int Isclicked = 0;
         private void mode_Click(object sender, RoutedEventArgs e)
         {
-            window.Background = Brushes.Black;
-            cpu.Foreground = Brushes.White;
-            enter.Foreground = Brushes.White;
-            singleCore.Foreground = Brushes.White;
-            multiCore.Foreground = Brushes.White;
-            result.Foreground = Brushes.White;
-            mode.Foreground = Brushes.Black;
+            Button btn = (Button)sender;
+            if(Isclicked == 0)
+            {
+                window.Background = Brushes.Black;
+                cpu.Foreground = Brushes.White;
+                enter.Foreground = Brushes.White;
+                singleCore.Foreground = Brushes.White;
+                multiCore.Foreground = Brushes.White;
+                result.Foreground = Brushes.White;
+                mode.Foreground = Brushes.Black;
+                Isclicked += 1;
+            }
+            else if(Isclicked == 1)
+            {
+                window.Background = Brushes.White;
+                cpu.Foreground = Brushes.Black;
+                enter.Foreground = Brushes.Black;
+                singleCore.Foreground = Brushes.Black;
+                multiCore.Foreground = Brushes.Black;   
+                result.Foreground = Brushes.Black;
+                mode.Foreground = Brushes.Black;
+                Isclicked -= 1;
+            }
+
+        }
+
+        private void name_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            
         }
     }
 }

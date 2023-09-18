@@ -11,7 +11,8 @@
     <StackPanel>
         <Label x:Name="cpu" Content="CPU Benchmark" FontSize="45" FontStyle="Normal" FontWeight="ExtraBold"/>
         <Label x:Name="enter" Content="Please enter your CPU:" FontSize="18" FontStyle="Normal" FontWeight="Bold"/>
-        <TextBox x:Name="name" FontSize="20"/>
+        <ComboBox x:Name="name" FontSize="20" SelectionChanged="name_SelectionChanged" Text="Select option" ItemsSource="{Binding SomeBindingPropertyList}" IsSynchronizedWithCurrentItem="True" SelectedItem="{Binding SomeBindingPropertySelectedCurrently, 
+                    Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
         <RadioButton x:Name="singleCore" Content="Single Core" FontSize="15" IsChecked="True" />
         <RadioButton x:Name="multiCore" Content="Multi Core" FontSize="15"/>
         <Button x:Name="start" Content="Start" Click="start_Click" FontSize="20"/>
