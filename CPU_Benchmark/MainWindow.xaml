@@ -9,7 +9,7 @@
         Background="White"
         x:Name="window">
     <StackPanel>
-        <Label x:Name="cpu" Content="CPU Benchmark" FontSize="45" FontStyle="Normal" FontWeight="ExtraBold"/>
+        <Label x:Name="title" Content="CPU Benchmark" FontSize="45" FontStyle="Normal" FontWeight="ExtraBold"/>
         <Label x:Name="enter" Content="Please enter your CPU:" FontSize="18" FontStyle="Normal" FontWeight="Bold"/>
         <ComboBox x:Name="name" FontSize="20" SelectionChanged="name_SelectionChanged" Text="Select option" ItemsSource="{Binding SomeBindingPropertyList}" IsSynchronizedWithCurrentItem="True" SelectedItem="{Binding SomeBindingPropertySelectedCurrently, 
                     Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />

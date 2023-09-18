@@ -22,7 +22,7 @@ namespace CPU_Benchmark
 {
     public partial class cpu : Window
     {
-        public static void check(MainWindow widow)
+        public void check(MainWindow widow)
         {
             string[] amdPole = { "Ryzen 7 1800X","Ryzen 7 PRO 1700X", "Ryzen 7 1700X", "Ryzen 7 PRO 1700", "Ryzen 7 1700", "Ryzen 5 1600X", "Ryzen 5 PRO 1600",
                 "Ryzen 5 1600", "Ryzen 5 1500X", "Ryzen 5 PRO 1500", "Ryzen 5 1400", "Ryzen 3 1300X","Ryzen 3 PRO 1300","Ryzen 3 PRO 1200","Ryzen 3 1200",
@@ -58,7 +58,6 @@ namespace CPU_Benchmark
             {
                 //stejne i tady
             }
-            else { MessageBox.Show("Co to je"); }
         }
     }
 }

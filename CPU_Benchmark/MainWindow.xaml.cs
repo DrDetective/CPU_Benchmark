@@ -39,7 +39,6 @@ namespace CPU_Benchmark
         }
         private void start_Click(object sender, RoutedEventArgs e)
         {
-            if (name.Text.ToString() != string.Empty == false) { MessageBox.Show("Dělej zadej něco"); return; }
             Stopwatch stops = new Stopwatch();
             float single = 100000;
             float multi = 400000;
@@ -67,7 +66,6 @@ namespace CPU_Benchmark
                 }
             }
             stops.Stop();
-            MessageBox.Show($"Done in {stops.Elapsed}");
             if (bar.Value == 100)
             {
                 Random gen = new Random();
@@ -83,7 +81,7 @@ namespace CPU_Benchmark
             if(Isclicked == 0)
             {
                 window.Background = Brushes.Black;
-                cpu.Foreground = Brushes.White;
+                title.Foreground = Brushes.White;
                 enter.Foreground = Brushes.White;
                 singleCore.Foreground = Brushes.White;
                 multiCore.Foreground = Brushes.White;
@@ -94,7 +92,7 @@ namespace CPU_Benchmark
             else if(Isclicked == 1)
             {
                 window.Background = Brushes.White;
-                cpu.Foreground = Brushes.Black;
+                title.Foreground = Brushes.Black;
                 enter.Foreground = Brushes.Black;
                 singleCore.Foreground = Brushes.Black;
                 multiCore.Foreground = Brushes.Black;   
@@ -107,7 +105,7 @@ namespace CPU_Benchmark
 
         private void name_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            
+            cpu.check();
         }
     }
 }
