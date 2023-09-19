@@ -14,6 +14,7 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Media.Media3D;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using CPU_Benchmark;
@@ -77,7 +78,6 @@ namespace CPU_Benchmark
         int Isclicked = 0;
         private void mode_Click(object sender, RoutedEventArgs e) //nějak to funguje radši na to šahat nebudu
         {
-            Button btn = (Button)sender;
             if(Isclicked == 0)
             {
                 window.Background = Brushes.Black;
@@ -100,12 +100,25 @@ namespace CPU_Benchmark
                 mode.Foreground = Brushes.Black;
                 Isclicked -= 1;
             }
-
         }
 
         private void name_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            cpu.check();
+            cpu test = new cpu();
+            foreach (string s in test.amd) {
+            name.Items.Add(s);
+            }
+            name.SelectedIndex = 0;
+
+
+            ComboBoxItem item = new ComboBoxItem();
+            item.Content = "A";
+           name.Items.Add(item);
+
         }
     }
 }
+
+
+//možná sem dát cpu check místo aby byl v cpu.cs
+//možná bude lepší listbox místo combobox

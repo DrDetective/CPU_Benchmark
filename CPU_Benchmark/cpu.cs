@@ -20,11 +20,9 @@ using CPU_Benchmark;
 
 namespace CPU_Benchmark
 {
-    public partial class cpu : Window
+    public partial class cpu
     {
-        public void check(MainWindow widow)
-        {
-            string[] amdPole = { "Ryzen 7 1800X","Ryzen 7 PRO 1700X", "Ryzen 7 1700X", "Ryzen 7 PRO 1700", "Ryzen 7 1700", "Ryzen 5 1600X", "Ryzen 5 PRO 1600",
+            private static string[] amdPole = { "Ryzen 7 1800X","Ryzen 7 PRO 1700X", "Ryzen 7 1700X", "Ryzen 7 PRO 1700", "Ryzen 7 1700", "Ryzen 5 1600X", "Ryzen 5 PRO 1600",
                 "Ryzen 5 1600", "Ryzen 5 1500X", "Ryzen 5 PRO 1500", "Ryzen 5 1400", "Ryzen 3 1300X","Ryzen 3 PRO 1300","Ryzen 3 PRO 1200","Ryzen 3 1200",
                 "Ryzen Threadripper 1950X","Ryzen Threadripper 1920X","Ryzen Threadripper 1900X","Ryzen 5 2400G","Ryzen 5 2400GE","Ryzen 3 2200G","Ryzen 3 2200GE","Ryzen 3 PRO 2100GE",
                 "Ryzen 7 2700X","Ryzen 7 2700","Ryzen 7 2700E","Ryzen 5 2600X","Ryzen 5 2600","Ryzen 5 2600E","Ryzen 5 1600","Ryzen 5 2500X","Ryzen 3 2300X","Ryzen 1200","Ryzen Threadripper 2990WX"
@@ -42,22 +40,10 @@ namespace CPU_Benchmark
                 ,"Ryzen 9 6900HS","Ryzen 7 6800H","Ryzen 7 6800HS","Ryzen 7 6800U","Ryzen 5 6600H","Ryzen 5 6600HS","Ryzen 5 6600U","Ryzen 5 7520U","Ryzen 3 7320U","Ryzen 7 PRO 7730U","Ryzen 7 7730U","Ryzen 5 PRO 7530U","Ryzen 5 7530U","Ryzen 3 PRO 7330U"
                 ,"Ryzen 3 7330U","Ryzen 7 7735HS","Ryzen 7 7736U","Ryzen 7 7735U","Ryzen 5 7535HS","Ryzen 5 7535U","Ryzen 3 7335U","Ryzen 9 7940HS","Ryzen 9 7940H","Ryzen 7 7840HS","Ryzen 7 7840H","Ryzen 7 7840U","Ryzen 5 7640HS","Ryzen 5 7640H","Ryzen 5 7640U"
                 ,"Ryzen 5 7540U","Ryzen 3 7440U","Ryzen 9 7945HX","Ryzen 9 7845HX","Ryzen 7 7745HX","Ryzen 5 7645HX","Ryzen Z1 Extreme","Ryzen Z1","Ryzen 7045","Ryzen 7040","Ryzen 7035","Ryzen 7030","Ryzen 7020"};//Snad to je všechno a dodat EPYC    https://en.wikipedia.org/wiki/Epyc
-            List<string> amd = new List<string>(amdPole);
+            public List<string> amd = new List<string>(amdPole);
 
 
-            string[] intelPole = {"Core i9 13900K", "Core i9 13900KF", "Core i9 13900", "Core i9 13900F", "Core i9 13900T", "Core i7 13700K", "Core i7 13700KF", "Core i7 13700", "Core i7 13700F", "Core i7 13700T", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", }; //dodat intel   https://en.wikipedia.org/wiki/List_of_Intel_processors
-            List<string> intel = new List<string>(intelPole);
-            
-            
-            
-            if (amd.Contains(widow.name.Text))
-            {
-                //tady nejspis bude switch na prirazeni realnych cpu skore 
-            }
-            else if (intel.Contains(widow.name.Text))
-            {
-                //stejne i tady
-            }
-        }
+            private static string[] intelPole = {"Core i9 13900K", "Core i9 13900KF", "Core i9 13900", "Core i9 13900F", "Core i9 13900T", "Core i7 13700K", "Core i7 13700KF", "Core i7 13700", "Core i7 13700F", "Core i7 13700T", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", }; //dodat intel   https://en.wikipedia.org/wiki/List_of_Intel_processors
+            public List<string> intel = new List<string>(intelPole);
     }
 }
