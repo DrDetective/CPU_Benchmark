@@ -39,7 +39,9 @@ namespace CPU_Benchmark
                 ,"Ryzen 7 5800HS","Ryzen 7 5825U","Ryzen 7 5800U","Ryzen 5 5600H","Ryzen 5 5600HS","Ryzen 5 5625U","Ryzen 5 5600U","Ryzen 5 5560U","Ryzen 3 5425U","Ryzen 3 5400U","Ryzen 3 5125C","Ryzen 9 6980HX","Ryzen 9 6980HS","Ryzen 9 6900HX"
                 ,"Ryzen 9 6900HS","Ryzen 7 6800H","Ryzen 7 6800HS","Ryzen 7 6800U","Ryzen 5 6600H","Ryzen 5 6600HS","Ryzen 5 6600U","Ryzen 5 7520U","Ryzen 3 7320U","Ryzen 7 PRO 7730U","Ryzen 7 7730U","Ryzen 5 PRO 7530U","Ryzen 5 7530U","Ryzen 3 PRO 7330U"
                 ,"Ryzen 3 7330U","Ryzen 7 7735HS","Ryzen 7 7736U","Ryzen 7 7735U","Ryzen 5 7535HS","Ryzen 5 7535U","Ryzen 3 7335U","Ryzen 9 7940HS","Ryzen 9 7940H","Ryzen 7 7840HS","Ryzen 7 7840H","Ryzen 7 7840U","Ryzen 5 7640HS","Ryzen 5 7640H","Ryzen 5 7640U"
-                ,"Ryzen 5 7540U","Ryzen 3 7440U","Ryzen 9 7945HX","Ryzen 9 7845HX","Ryzen 7 7745HX","Ryzen 5 7645HX","Ryzen Z1 Extreme","Ryzen Z1","Ryzen 7045","Ryzen 7040","Ryzen 7035","Ryzen 7030","Ryzen 7020"};//Snad to je všechno a dodat EPYC    https://en.wikipedia.org/wiki/Epyc
+                ,"Ryzen 5 7540U","Ryzen 3 7440U","Ryzen 9 7945HX","Ryzen 9 7845HX","Ryzen 7 7745HX","Ryzen 5 7645HX","Ryzen Z1 Extreme","Ryzen Z1","Ryzen 7045","Ryzen 7040","Ryzen 7035","Ryzen 7030","Ryzen 7020"};
+        //Snad to je všechno a dodat EPYC    https://en.wikipedia.org/wiki/Epyc
+        //seřadit podle ryzen 7 apod.
             public List<string> amd = new List<string>(amdPole);
 
 
