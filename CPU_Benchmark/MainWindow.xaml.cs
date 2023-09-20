@@ -30,29 +30,29 @@ namespace CPU_Benchmark
         {
             InitializeComponent();
             cpu test = new cpu();
-            foreach (string s in test.amd)
-            {
-                name.Items.Add(s);
-            }
-            name.SelectedIndex = 0;
-
-            ComboBoxItem item = new ComboBoxItem();
-            item.Content = "A";
-            name.Items.Add(item);
+            //AMD
+            foreach (string a in test.amd) { Amd.Items.Add(a);}
+            Amd.SelectedIndex = 0;
+            Amd.Items.Add("----------------------------------------------EPYC------------------------------------------"); //udělat aby uživatel tohle nemohl zvolit
+            foreach (string e in test.epyc) { Amd.Items.Add(e); }
+            //INTEL
+            //foreach (string i in test.intel) { name.Items.Add(i); }
+            //Intel.SelectedIndex = 0;
         }
         private void Loadbar()
         {
-            for (int i = 0; i < 100; i += 10)
-            {
-                bar.Value += i;
-                Thread.Sleep(700);
-            }
+            //for (int progressValue = 0; progressValue < 101; progressValue++)
+            //{
+            //    bar.Value = progressValue;
+            //    //Thread.Sleep(100);
+            //}
         }
         private void start_Click(object sender, RoutedEventArgs e)
         {
             Stopwatch stops = new Stopwatch();
             float single = 100000;
             float multi = 400000;
+            bar.Value = 0;
             stops.Start();
             if (singleCore.IsChecked == true)
             {
@@ -61,7 +61,7 @@ namespace CPU_Benchmark
                 {
                     for (int j = 0; j < i / 2; j++)
                     {
-                        if (j%2 !=0) { break; }
+                        if (j%2 !=0) { bar.Value = i; break; }
                     }
                 }
             }
@@ -116,8 +116,14 @@ namespace CPU_Benchmark
             
 
         }
+
+        private void help_Click(object sender, RoutedEventArgs e) //info box
+        {
+            MessageBox.Show("Pokud chceš zvolit Amd cpu tak v druhém boxu dej Intel.\nPokud chceš zvolit Intel cpu tak v prvném boxu dej Amd.\nCpu skóre jsou pravdivé");
+        }
     }
 }
 
 
 //možná sem dát cpu check místo aby byl v cpu.cs
+//Progress bar at jde viet ze se to nacita

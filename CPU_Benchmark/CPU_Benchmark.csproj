@@ -5,6 +5,18 @@
     <TargetFramework>net6.0-windows</TargetFramework>
     <Nullable>enable</Nullable>
     <UseWPF>true</UseWPF>
+    <ApplicationIcon>cpu.ico</ApplicationIcon>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="material\**" />
+    <EmbeddedResource Remove="material\**" />
+    <None Remove="material\**" />
+    <Page Remove="material\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="cpu.ico" />
+  </ItemGroup>
 
 </Project>
