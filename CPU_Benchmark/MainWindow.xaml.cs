@@ -29,6 +29,16 @@ namespace CPU_Benchmark
         public MainWindow()
         {
             InitializeComponent();
+            cpu test = new cpu();
+            foreach (string s in test.amd)
+            {
+                name.Items.Add(s);
+            }
+            name.SelectedIndex = 0;
+
+            ComboBoxItem item = new ComboBoxItem();
+            item.Content = "A";
+            name.Items.Add(item);
         }
         private void Loadbar()
         {
@@ -101,19 +111,9 @@ namespace CPU_Benchmark
                 Isclicked -= 1;
             }
         }
-
         private void name_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            cpu test = new cpu();
-            foreach (string s in test.amd) {
-            name.Items.Add(s);
-            }
-            name.SelectedIndex = 0;
-
-
-            ComboBoxItem item = new ComboBoxItem();
-            item.Content = "A";
-           name.Items.Add(item);
+            
 
         }
     }
@@ -121,4 +121,3 @@ namespace CPU_Benchmark
 
 
 //možná sem dát cpu check místo aby byl v cpu.cs
-//možná bude lepší listbox místo combobox
