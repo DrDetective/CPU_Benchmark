@@ -6,14 +6,13 @@
         xmlns:local="clr-namespace:CPU_Benchmark"
         mc:Ignorable="d"
         Title="CPU Benchmark" Height="450" Width="800"
-        Icon="cpu.ico"
         Background="White"
         x:Name="window">
     <StackPanel>
         <Label x:Name="title" Content="CPU Benchmark" FontSize="45" FontStyle="Normal" FontWeight="ExtraBold"/>
         <Label x:Name="enter" Content="Choose your CPU:" FontSize="18" FontStyle="Normal" FontWeight="Bold"/>
-        <ComboBox x:Name="Amd" FontSize="20" SelectionChanged="name_SelectionChanged"/>
-        <ComboBox x:Name="Intel" FontSize="20" />
+        <ComboBox x:Name="Amd" FontSize="20" Selected="Amd_Selected"/>
+        <ComboBox x:Name="Intel" FontSize="20" Selected="Intel_Selected" />
         <RadioButton x:Name="singleCore" Content="Single Core" FontSize="15" IsChecked="True" />
         <RadioButton x:Name="multiCore" Content="Multi Core" FontSize="15"/>
         <Button x:Name="start" Content="Start" Click="start_Click" FontSize="20"/>

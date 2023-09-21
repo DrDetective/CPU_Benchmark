@@ -111,16 +111,19 @@ namespace CPU_Benchmark
                 Isclicked -= 1;
             }
         }
-        private void name_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            
-
-        }
-
         private void help_Click(object sender, RoutedEventArgs e) //info box
         {
-            MessageBox.Show("Pokud chceš zvolit Amd cpu tak v druhém boxu dej Intel.\nPokud chceš zvolit Intel cpu tak v prvném boxu dej Amd.\nCpu skóre jsou pravdivé");
+            MessageBox.Show($"Pokud chceš zvolit Amd cpu tak v druhém boxu dej Intel.\nPokud chceš zvolit Intel cpu tak v prvném boxu dej Amd.\nCpu skóre jsou pravdivé");
+        } //přidat hypertext na bugs
+        private void Amd_Selected(object sender, RoutedEventArgs e)
+        {
+
         }
+        private void Intel_Selected(object sender, RoutedEventArgs e)
+        {
+
+        }
+
     }
 }
 
