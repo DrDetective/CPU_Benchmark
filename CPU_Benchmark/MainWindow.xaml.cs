@@ -115,14 +115,14 @@ namespace CPU_Benchmark
         {
             MessageBox.Show($"Pokud chceš zvolit Amd cpu tak v druhém boxu dej Intel.\nPokud chceš zvolit Intel cpu tak v prvném boxu dej Amd.\nCpu skóre jsou pravdivé");
         } //přidat hypertext na bugs
-        private void Amd_Selected(object sender, RoutedEventArgs e)
-        {
+        //private void Amd_Selected(object sender, RoutedEventArgs e)
+        //{
 
-        }
-        private void Intel_Selected(object sender, RoutedEventArgs e)
-        {
+        //}
+        //private void Intel_Selected(object sender, RoutedEventArgs e)
+        //{
 
-        }
+        //}
 
     }
 }
