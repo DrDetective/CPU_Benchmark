@@ -112,8 +112,10 @@ namespace CPU_Benchmark
             }
         }
         private void help_Click(object sender, RoutedEventArgs e) //info box
-        {
-            MessageBox.Show($"Pokud chceš zvolit Amd cpu tak v druhém boxu dej Intel.\nPokud chceš zvolit Intel cpu tak v prvném boxu dej Amd.\nCpu skóre jsou pravdivé");
+        { //nevim už
+            //var psi = new ProcessStartInfo
+            //{ FileName = "https://github.com/DrDetective/CPU_Benchmark/issues/new", UseShellExecute = true, };
+            //MessageBox.Show($"Pokud chceš zvolit Amd cpu tak v druhém boxu dej Intel.\nPokud chceš zvolit Intel cpu tak v prvném boxu dej Amd.\nCpu skóre jsou pravdivé\nOdkaz na report bugs");
         } //přidat hypertext na bugs
         //private void Amd_Selected(object sender, RoutedEventArgs e)
         //{
