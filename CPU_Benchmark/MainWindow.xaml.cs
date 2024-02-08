@@ -30,6 +30,10 @@ namespace CPU_Benchmark
     public partial class MainWindow : Window
     {
         cpu test = new cpu();
+        public bool AMDcheck;
+        public bool Intelcheck;
+        public int score { get; set; }
+        public bool True = false;
         public MainWindow()
         {
             InitializeComponent();
@@ -62,7 +66,6 @@ namespace CPU_Benchmark
                 cpuSwitch();
             }
         }
-        public int score { get; set; }
         private void cpuSwitch() 
         {
             Loadbar();
@@ -1348,8 +1351,6 @@ namespace CPU_Benchmark
             if (bar.Value == 100) { result.Content = $" {score} points"; }
             bar.Value = 0;
         }
-        public bool AMDcheck;
-        public bool Intelcheck;
         private void start_Click(object sender, RoutedEventArgs e)
         {
             if (Amd.SelectedIndex == 207) { AMDcheck = true; }
@@ -1360,7 +1361,6 @@ namespace CPU_Benchmark
             if (Amd.SelectedIndex != 207 && Amd.SelectedIndex != 0 && Intel.SelectedIndex != 308 &&Intel.SelectedIndex != 0) { AMDcheck = false; Intelcheck = false; }
             cpuListCheck(AMDcheck, Intelcheck);
         }
-        public bool True = false;
         private void mode_Click(object sender, RoutedEventArgs e) //nějak to funguje radši na to šahat nebudu
         {
             if (True == false)
@@ -1390,7 +1390,7 @@ namespace CPU_Benchmark
         }
         private void help_Click(object sender, RoutedEventArgs e) //info box
         {
-            MessageBoxResult helpBox = MessageBox.Show($"Pokud chceš zvolit Amd cpu tak v druhém boxu dej Intel.\nPokud chceš zvolit Intel cpu tak v prvném boxu dej Amd.\nCpu skóre jsou pravdivé\nDej ANO aby jsi mohl jít napsat report na hmyz","Help",MessageBoxButton.YesNo);
+            MessageBoxResult helpBox = MessageBox.Show($"Pokud chceš zvolit Amd cpu tak v druhém boxu dej Intel.\nPokud chceš zvolit Intel cpu tak v prvném boxu dej Amd.\nCpu skóre jsou pravdivé\nDej ANO aby jsi mohl jít napsat report na hmyz","Help",MessageBoxButton.YesNo, MessageBoxImage.Information);
             if (helpBox == MessageBoxResult.Yes)
             {
                 var psi = new ProcessStartInfo
