@@ -1360,10 +1360,10 @@ namespace CPU_Benchmark
             if (Amd.SelectedIndex != 207 && Amd.SelectedIndex != 0 && Intel.SelectedIndex != 308 &&Intel.SelectedIndex != 0) { AMDcheck = false; Intelcheck = false; }
             cpuListCheck(AMDcheck, Intelcheck);
         }
+        public bool True = false;
         private void mode_Click(object sender, RoutedEventArgs e) //nějak to funguje radši na to šahat nebudu
         {
-            bool Isclicked = false;
-            if (Isclicked == false)
+            if (True == false)
             {
                 window.Background = Brushes.Black;
                 title.Foreground = Brushes.White;
@@ -1372,9 +1372,10 @@ namespace CPU_Benchmark
                 multiCore.Foreground = Brushes.White;
                 result.Foreground = Brushes.White;
                 mode.Foreground = Brushes.Black;
-                Isclicked = true;
+                True = true;
+                mode.Content = "Light mode";
             }
-            else if(Isclicked == true)
+            else if(True == true)
             {
                 window.Background = Brushes.White;
                 title.Foreground = Brushes.Black;
@@ -1383,7 +1384,8 @@ namespace CPU_Benchmark
                 multiCore.Foreground = Brushes.Black;   
                 result.Foreground = Brushes.Black;
                 mode.Foreground = Brushes.Black;
-                Isclicked = false;
+                True = false;
+                mode.Content = "Dark mode";
             }
         }
         private void help_Click(object sender, RoutedEventArgs e) //info box
