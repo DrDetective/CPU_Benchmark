@@ -19,6 +19,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Media.Media3D;
+using System.Windows.Media.TextFormatting;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using CPU_Benchmark;
@@ -30,7 +31,7 @@ namespace CPU_Benchmark
     /// </summary>
     public partial class MainWindow : Window
     {
-        cpu test = new cpu();
+        cpu CpuList = new cpu();
         public bool AMDcheck;
         public bool Intelcheck;
         public int score { get; set; }
@@ -40,20 +41,36 @@ namespace CPU_Benchmark
         {
             InitializeComponent();
             //AMD
-            foreach (string a in test.amd) { Amd.Items.Add(a);}
+            foreach (string a in CpuList.amd) { Amd.Items.Add(a);}
             Amd.SelectedIndex = 0;
             Amd.Items.Add("----------------------------------------------EPYC------------------------------------------");
-            foreach (string e in test.epyc) { Amd.Items.Add(e); }
+            foreach (string e in CpuList.epyc) { Amd.Items.Add(e); }
             //INTEL
-            foreach (string i in test.intel) { Intel.Items.Add(i); }
+            foreach (string i in CpuList.intel) { Intel.Items.Add(i); }
             Intel.SelectedIndex = 0;
             Intel.Items.Add("----------------------------------------------XEON------------------------------------------");
-            foreach (string x in test.xeon) { Intel.Items.Add(x); }
-            cpuIn = CpuInput.Text;
+            foreach (string x in CpuList.xeon) { Intel.Items.Add(x); }
         }
         private void cpuCheck() 
         {
-            
+            cpuIn = CpuInput.Text;
+            if (CpuList.intel.Contains(cpuIn) || CpuList.xeon.Contains(cpuIn))
+            {
+                AMDcheck = true;
+                Intelcheck = false;
+                if (cpuIn.StartsWith("C")) { Intel.SelectedIndex = CpuList.intel.FindIndex(x => x.StartsWith(cpuIn)); }
+                else if (cpuIn.StartsWith("X")) { Intel.SelectedIndex = CpuList.xeon.FindIndex(x => x.StartsWith(cpuIn)); }
+                cpuSwitch();
+            }
+            else if (CpuList.amd.Contains(cpuIn) || CpuList.epyc.Contains(cpuIn))
+            { 
+                AMDcheck = false;
+                Intelcheck = true;
+                if (cpuIn.StartsWith("R")) { Amd.SelectedIndex = CpuList.amd.FindIndex(x => x.StartsWith(cpuIn)); }
+                else if (cpuIn.StartsWith("E")) { Amd.SelectedIndex = CpuList.epyc.FindIndex(x => x.StartsWith(cpuIn)); }
+                cpuSwitch();
+            }
+            else { MessageBox.Show("Není to napsaný v kodu mrdko"); return; }
         }
         private void cpuListCheck(bool AMDcheck, bool Intelcheck) 
         {
@@ -382,7 +399,7 @@ namespace CPU_Benchmark
                         case 303: score = 69; break; //EPYC 3101
                     }
                 }
-                if (AMDcheck == true && Intelcheck == false) //INTEL SINGLE CORE CPU
+                else if (AMDcheck == true && Intelcheck == false) //INTEL SINGLE CORE CPU
                 {
                     switch (Intel.SelectedIndex)
                     {
@@ -410,9 +427,9 @@ namespace CPU_Benchmark
                         case 22: score = 0; break; //Core i9 11900F
                         case 23: score = 0; break; //Core i9 11900T
                         case 24: score = 0; break; //Core i9 11900H
-                        case 25: score = 0; break; //Core i9 10910
-                        case 26: score = 0; break; //Core i9 10900
-                        case 27: score = 0; break; //Core i9 10900K
+                        case 25: score = 025; break; //Core i9 10910
+                        case 26: score = 99; break; //Core i9 10900
+                        case 27: score = 4560; break; //Core i9 10900K
                         case 28: score = 0; break; //Core i9 10900KF
                         case 29: score = 0; break; //Core i9 10900F
                         case 30: score = 0; break; //Core i9 10900E
@@ -1015,7 +1032,7 @@ namespace CPU_Benchmark
                         case 303: score = 69; break; //EPYC 3101
                     }
                 }
-                if (AMDcheck == true && Intelcheck == false) //INTEL MULTI CORE CPU
+                else if (AMDcheck == true && Intelcheck == false) //INTEL MULTI CORE CPU
                 {
                     switch (Intel.SelectedIndex)
                     {
@@ -1352,11 +1369,13 @@ namespace CPU_Benchmark
                 await Task.Delay(interval);
             }
             if (bar.Value == 100) { result.Content = $" {score} points"; }
+            Intel.SelectedIndex = 0;
+            Amd.SelectedIndex = 0;
             bar.Value = 0;
         }
         private void start_Click(object sender, RoutedEventArgs e)
         {
-            if (String.IsNullOrEmpty(cpuIn)) { cpuCheck(); return; }
+            if (CpuInput.Text != "") { cpuCheck(); return; }
             else if (Amd.SelectedIndex == 207 && Intel.SelectedIndex == 308 || Amd.SelectedIndex == 0 && Intel.SelectedIndex == 0) { AMDcheck = true; Intelcheck = true; }
             else if (Amd.SelectedIndex != 207 && Amd.SelectedIndex != 0 || Intel.SelectedIndex != 308 && Intel.SelectedIndex != 0)
             {
