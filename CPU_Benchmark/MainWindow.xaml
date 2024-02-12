@@ -12,9 +12,10 @@
     <StackPanel>
         <Label x:Name="title" Content="CPU Benchmark" FontSize="45" FontStyle="Normal" FontWeight="ExtraBold"/>
         <Label x:Name="enter" Content="Choose your CPU:" FontSize="18" FontStyle="Normal" FontWeight="Bold"/>
-        <ComboBox x:Name="Amd" FontSize="20" />
-        <ComboBox x:Name="Intel" FontSize="20"  />
-        <RadioButton x:Name="singleCore" Content="Single Core" FontSize="15" IsChecked="True" />
+        <TextBox x:Name="CpuInput" Height="30" FontSize="20" KeyDown="cpuInput_KeyDown"/>
+        <ComboBox x:Name="Amd" FontSize="20"/>
+        <ComboBox x:Name="Intel" FontSize="20"/>
+        <RadioButton x:Name="singleCore" Content="Single Core" FontSize="15" IsChecked="True"/>
         <RadioButton x:Name="multiCore" Content="Multi Core" FontSize="15"/>
         <Button x:Name="start" Content="Start" Click="start_Click" FontSize="20"/>
         <ProgressBar x:Name="bar" Minimum="0" Maximum="100" Height="40"/>

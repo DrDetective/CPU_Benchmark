@@ -4,6 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Diagnostics;
+using System.Diagnostics.Eventing.Reader;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Net.NetworkInformation;
@@ -34,6 +35,7 @@ namespace CPU_Benchmark
         public bool Intelcheck;
         public int score { get; set; }
         public bool True = false;
+        public string cpuIn = "";
         public MainWindow()
         {
             InitializeComponent();
@@ -47,10 +49,11 @@ namespace CPU_Benchmark
             Intel.SelectedIndex = 0;
             Intel.Items.Add("----------------------------------------------XEON------------------------------------------");
             foreach (string x in test.xeon) { Intel.Items.Add(x); }
+            cpuIn = CpuInput.Text;
         }
         private void cpuCheck() 
         {
-            //zkusit zjistit cpu uzivatele pomoci neceho a pote najit to skore
+            
         }
         private void cpuListCheck(bool AMDcheck, bool Intelcheck) 
         {
@@ -66,7 +69,7 @@ namespace CPU_Benchmark
                 cpuSwitch();
             }
         }
-        private void cpuSwitch() 
+        private void cpuSwitch()  //dopsat score k cpus
         {
             Loadbar();
             if (singleCore.IsChecked == true) //SINGLECORE SELECTED
@@ -690,14 +693,14 @@ namespace CPU_Benchmark
                         case 305: score = 0; break; //Core i3 1220P
                         case 306: score = 0; break; //Core i3 1215U
                         case 307: score = 0; break; //Core i3 1210U
-                        case 309: score = 0; break; //
-                        case 310: score = 0; break; //
-                        case 311: score = 0; break; //
-                        case 312: score = 0; break; //
-                        case 313: score = 0; break; //
-                        case 314: score = 0; break; //
-                        case 315: score = 0; break; //
-                        case 316: score = 96; break; //
+                        case 309: score = 0; break; //Xeon W-11965MRE
+                        case 310: score = 0; break; //Xeon W-11955M
+                        case 311: score = 0; break; //Xeon W-11865MLE
+                        case 312: score = 0; break; //Xeon W-11855M
+                        case 313: score = 0; break; //Xeon W-11555MRE
+                        case 314: score = 0; break; //Xeon W-11555MLE
+                        case 315: score = 0; break; //Xeon W-11155MRE
+                        case 316: score = 96; break; //Xeon W-11155MLE
                     }
                 }
             }
@@ -1013,324 +1016,324 @@ namespace CPU_Benchmark
                     }
                 }
                 if (AMDcheck == true && Intelcheck == false) //INTEL MULTI CORE CPU
-                { //dopsat intel cpu do comments
+                {
                     switch (Intel.SelectedIndex)
                     {
-                        case 1: score = 0; break; //
-                        case 2: score = 0; break; //
-                        case 3: score = 0; break; //
-                        case 4: score = 0; break; //
-                        case 5: score = 0; break; //
-                        case 6: score = 0; break; //
-                        case 7: score = 0; break; //
-                        case 8: score = 0; break; //
-                        case 9: score = 0; break; //
-                        case 10: score = 0; break; //
-                        case 11: score = 0; break; //
-                        case 12: score = 0; break; //
-                        case 13: score = 0; break; //
-                        case 14: score = 0; break; //
-                        case 15: score = 0; break; //
-                        case 16: score = 0; break; //
-                        case 17: score = 0; break; //
-                        case 18: score = 0; break; //
-                        case 19: score = 0; break; //
-                        case 20: score = 0; break; //
-                        case 21: score = 0; break; //
-                        case 22: score = 0; break; //
-                        case 23: score = 0; break; //
-                        case 24: score = 0; break; //
-                        case 25: score = 0; break; //
-                        case 26: score = 0; break; //
-                        case 27: score = 0; break; //
-                        case 28: score = 0; break; //
-                        case 29: score = 0; break; //
-                        case 30: score = 0; break; //
-                        case 31: score = 0; break; //
-                        case 32: score = 0; break; //
-                        case 33: score = 0; break; //
-                        case 34: score = 0; break; //
-                        case 35: score = 0; break; //
-                        case 36: score = 0; break; //
-                        case 37: score = 0; break; //
-                        case 38: score = 0; break; //
-                        case 39: score = 0; break; //
-                        case 40: score = 0; break; //
-                        case 41: score = 0; break; //
-                        case 42: score = 0; break; //
-                        case 43: score = 0; break; //
-                        case 44: score = 0; break; //
-                        case 45: score = 0; break; //
-                        case 46: score = 0; break; //
-                        case 47: score = 0; break; //
-                        case 48: score = 0; break; //
-                        case 49: score = 0; break; //
-                        case 50: score = 0; break; //
-                        case 51: score = 0; break; //
-                        case 52: score = 0; break; //
-                        case 53: score = 0; break; //
-                        case 54: score = 0; break; //
-                        case 55: score = 0; break; //
-                        case 56: score = 0; break; //
-                        case 57: score = 0; break; //
-                        case 58: score = 0; break; //
-                        case 59: score = 0; break; //
-                        case 60: score = 0; break; //
-                        case 61: score = 0; break; //
-                        case 62: score = 0; break; //
-                        case 63: score = 0; break; //
-                        case 64: score = 0; break; //
-                        case 65: score = 0; break; //
-                        case 66: score = 0; break; //
-                        case 67: score = 0; break; //
-                        case 68: score = 0; break; //
-                        case 69: score = 0; break; //
-                        case 70: score = 0; break; //
-                        case 71: score = 0; break; //
-                        case 72: score = 0; break; //
-                        case 73: score = 0; break; //
-                        case 74: score = 0; break; //
-                        case 75: score = 0; break; //
-                        case 76: score = 0; break; //
-                        case 77: score = 0; break; //
-                        case 78: score = 0; break; //
-                        case 79: score = 0; break; //
-                        case 80: score = 0; break; //
-                        case 81: score = 0; break; //
-                        case 82: score = 0; break; //
-                        case 83: score = 0; break; //
-                        case 84: score = 0; break; //
-                        case 85: score = 0; break; //
-                        case 86: score = 0; break; //
-                        case 87: score = 0; break; //
-                        case 88: score = 0; break; //
-                        case 89: score = 0; break; //
-                        case 90: score = 0; break; //
-                        case 91: score = 0; break; //
-                        case 92: score = 0; break; //
-                        case 93: score = 0; break; //
-                        case 94: score = 0; break; //
-                        case 95: score = 0; break; //
-                        case 96: score = 0; break; //
-                        case 97: score = 0; break; //
-                        case 98: score = 0; break; //
-                        case 99: score = 0; break; //
-                        case 100: score = 0; break; //
-                        case 101: score = 0; break; //
-                        case 102: score = 0; break; //
-                        case 103: score = 0; break; //
-                        case 104: score = 0; break; //
-                        case 105: score = 0; break; //
-                        case 106: score = 0; break; //
-                        case 107: score = 0; break; //
-                        case 108: score = 0; break; //
-                        case 109: score = 0; break; //
-                        case 110: score = 0; break; //
-                        case 111: score = 0; break; //
-                        case 112: score = 0; break; //
-                        case 113: score = 0; break; //
-                        case 114: score = 0; break; //
-                        case 115: score = 0; break; //
-                        case 116: score = 0; break; //
-                        case 117: score = 0; break; //
-                        case 118: score = 0; break; //
-                        case 119: score = 0; break; //
-                        case 120: score = 0; break; //
-                        case 121: score = 0; break; //
-                        case 122: score = 0; break; //
-                        case 123: score = 0; break; //
-                        case 124: score = 0; break; //
-                        case 125: score = 0; break; //
-                        case 126: score = 0; break; //
-                        case 127: score = 0; break; //
-                        case 128: score = 0; break; //
-                        case 129: score = 0; break; //
-                        case 130: score = 0; break; //
-                        case 131: score = 0; break; //
-                        case 132: score = 0; break; //
-                        case 133: score = 0; break; //
-                        case 134: score = 0; break; //
-                        case 135: score = 0; break; //
-                        case 136: score = 0; break; //
-                        case 137: score = 0; break; //
-                        case 138: score = 0; break; //
-                        case 139: score = 0; break; //
-                        case 140: score = 0; break; //
-                        case 141: score = 0; break; //
-                        case 142: score = 0; break; //
-                        case 143: score = 0; break; //
-                        case 144: score = 0; break; //
-                        case 145: score = 0; break; //
-                        case 146: score = 0; break; //
-                        case 147: score = 0; break; //
-                        case 148: score = 0; break; //
-                        case 149: score = 0; break; //
-                        case 150: score = 0; break; //
-                        case 151: score = 0; break; //
-                        case 152: score = 0; break; //
-                        case 153: score = 0; break; //
-                        case 154: score = 0; break; //
-                        case 155: score = 0; break; //
-                        case 156: score = 0; break; //
-                        case 157: score = 0; break; //
-                        case 158: score = 0; break; //
-                        case 159: score = 0; break; //
-                        case 160: score = 0; break; //
-                        case 161: score = 0; break; //
-                        case 162: score = 0; break; //
-                        case 163: score = 0; break; //
-                        case 164: score = 0; break; //
-                        case 165: score = 0; break; //
-                        case 166: score = 0; break; // 
-                        case 167: score = 0; break; //
-                        case 168: score = 0; break; //
-                        case 169: score = 0; break; //
-                        case 170: score = 0; break; //
-                        case 171: score = 0; break; //
-                        case 172: score = 0; break; //
-                        case 173: score = 0; break; //
-                        case 174: score = 0; break; // 
-                        case 175: score = 0; break; // 
-                        case 176: score = 0; break; // 
-                        case 177: score = 0; break; // 
-                        case 178: score = 0; break; //
-                        case 179: score = 0; break; //
-                        case 180: score = 0; break; //
-                        case 181: score = 0; break; //
-                        case 182: score = 0; break; //
-                        case 183: score = 0; break; //
-                        case 184: score = 0; break; //
-                        case 185: score = 0; break; //
-                        case 186: score = 0; break; //
-                        case 187: score = 0; break; //
-                        case 188: score = 0; break; //
-                        case 189: score = 0; break; //
-                        case 190: score = 0; break; //
-                        case 191: score = 0; break; //
-                        case 192: score = 0; break; //
-                        case 193: score = 0; break; //
-                        case 194: score = 0; break; //
-                        case 195: score = 0; break; //
-                        case 196: score = 0; break; //
-                        case 197: score = 0; break; // 
-                        case 198: score = 0; break; //
-                        case 199: score = 0; break; // 
-                        case 200: score = 0; break; //
-                        case 201: score = 0; break; //
-                        case 202: score = 0; break; // 
-                        case 203: score = 0; break; //
-                        case 204: score = 0; break; //
-                        case 205: score = 0; break; //
-                        case 206: score = 0; break; //
-                        case 207: score = 0; break; //
-                        case 208: score = 0; break; //
-                        case 209: score = 0; break; //
-                        case 210: score = 0; break; //
-                        case 211: score = 0; break; //
-                        case 212: score = 0; break; //
-                        case 213: score = 0; break; //
-                        case 214: score = 0; break; //
-                        case 215: score = 0; break; //
-                        case 216: score = 0; break; //
-                        case 217: score = 0; break; //
-                        case 218: score = 0; break; //
-                        case 219: score = 0; break; //
-                        case 220: score = 0; break; //
-                        case 221: score = 0; break; //
-                        case 222: score = 0; break; //
-                        case 223: score = 0; break; //
-                        case 224: score = 0; break; //
-                        case 225: score = 0; break; //
-                        case 226: score = 0; break; //
-                        case 227: score = 0; break; //
-                        case 228: score = 0; break; //
-                        case 229: score = 0; break; //
-                        case 230: score = 0; break; //
-                        case 231: score = 0; break; //
-                        case 232: score = 0; break; //
-                        case 233: score = 0; break; //
-                        case 234: score = 0; break; //
-                        case 235: score = 0; break; //
-                        case 236: score = 0; break; //
-                        case 237: score = 0; break; //
-                        case 238: score = 0; break; //
-                        case 239: score = 0; break; //
-                        case 240: score = 0; break; //
-                        case 241: score = 0; break; //
-                        case 242: score = 0; break; //
-                        case 243: score = 0; break; //
-                        case 244: score = 0; break; //
-                        case 245: score = 0; break; //
-                        case 246: score = 0; break; //
-                        case 247: score = 0; break; //
-                        case 248: score = 0; break; //
-                        case 249: score = 0; break; //
-                        case 250: score = 0; break; //
-                        case 251: score = 0; break; //
-                        case 252: score = 0; break; //
-                        case 253: score = 0; break; //
-                        case 254: score = 0; break; //
-                        case 255: score = 0; break; //
-                        case 256: score = 0; break; //
-                        case 257: score = 0; break; //
-                        case 258: score = 0; break; //
-                        case 259: score = 0; break; //
-                        case 260: score = 0; break; //
-                        case 261: score = 0; break; //
-                        case 262: score = 0; break; //
-                        case 263: score = 0; break; //
-                        case 264: score = 0; break; //
-                        case 265: score = 0; break; //
-                        case 266: score = 0; break; //
-                        case 267: score = 0; break; //
-                        case 268: score = 0; break; //
-                        case 269: score = 0; break; //
-                        case 270: score = 0; break; //
-                        case 271: score = 0; break; //
-                        case 272: score = 0; break; //
-                        case 273: score = 0; break; //
-                        case 274: score = 0; break; //
-                        case 275: score = 0; break; //
-                        case 276: score = 0; break; //
-                        case 277: score = 0; break; //
-                        case 278: score = 0; break; //
-                        case 279: score = 0; break; //
-                        case 280: score = 0; break; //
-                        case 281: score = 0; break; //
-                        case 282: score = 0; break; //
-                        case 283: score = 0; break; //
-                        case 284: score = 0; break; //
-                        case 285: score = 0; break; //
-                        case 286: score = 0; break; //
-                        case 287: score = 0; break; //
-                        case 288: score = 0; break; //
-                        case 289: score = 0; break; //
-                        case 290: score = 0; break; //
-                        case 291: score = 0; break; //
-                        case 292: score = 0; break; //
-                        case 293: score = 0; break; //
-                        case 294: score = 0; break; //
-                        case 295: score = 0; break; //
-                        case 296: score = 0; break; //
-                        case 297: score = 0; break; //
-                        case 298: score = 0; break; // 
-                        case 299: score = 0; break; //
-                        case 300: score = 0; break; //
-                        case 301: score = 0; break; //
-                        case 302: score = 0; break; //
-                        case 303: score = 0; break; //
-                        case 304: score = 0; break; //
-                        case 305: score = 0; break; //
-                        case 306: score = 0; break; //
-                        case 307: score = 0; break; //
-                        case 309: score = 0; break; //
-                        case 310: score = 0; break; //
-                        case 311: score = 0; break; //
-                        case 312: score = 0; break; //
-                        case 313: score = 0; break; //
-                        case 314: score = 0; break; //
-                        case 315: score = 0; break; //
-                        case 316: score = 96; break; //
+                        case 1: score = 0; break; //Core i9 13900
+                        case 2: score = 0; break; //Core i9 1300K
+                        case 3: score = 0; break; //Core i9 1300KS
+                        case 4: score = 0; break; //Core i9 13900KF
+                        case 5: score = 0; break; //Core i9 13900F
+                        case 6: score = 0; break; //Core i9 13900T
+                        case 7: score = 0; break; //Core i9 12950HX
+                        case 8: score = 0; break; //Core i9 12900
+                        case 9: score = 0; break; //Core i9 12900K
+                        case 10: score = 0; break; //Core i9 12900KS
+                        case 11: score = 0; break; //Core i9 12900KF
+                        case 12: score = 0; break; //Core i9 12900F
+                        case 13: score = 0; break; //Core i9 12900T
+                        case 14: score = 0; break; //Core i9 12900H
+                        case 15: score = 0; break; //Core i9 12900HX
+                        case 16: score = 0; break; //Core i9 12900HK
+                        case 17: score = 0; break; //Core i9 11980HK
+                        case 18: score = 0; break; //Core i9 11950H
+                        case 19: score = 0; break; //Core i9 11900
+                        case 20: score = 0; break; //Core i9 11900K
+                        case 21: score = 0; break; //Core i9 11900KF
+                        case 22: score = 0; break; //Core i9 11900F
+                        case 23: score = 0; break; //Core i9 11900T
+                        case 24: score = 0; break; //Core i9 11900H
+                        case 25: score = 0; break; //Core i9 10910
+                        case 26: score = 0; break; //Core i9 10900
+                        case 27: score = 0; break; //Core i9 10900K
+                        case 28: score = 0; break; //Core i9 10900KF
+                        case 29: score = 0; break; //Core i9 10900F
+                        case 30: score = 0; break; //Core i9 10900E
+                        case 31: score = 0; break; //Core i9 10900T
+                        case 32: score = 0; break; //Core i9 10850K
+                        case 33: score = 0; break; //Core i9 9900
+                        case 34: score = 0; break; //Core i9 9900K
+                        case 35: score = 0; break; //Core i9 9900KS
+                        case 36: score = 0; break; //Core i9 9900T
+                        case 37: score = 0; break; //Core i9 8950HK
+                        case 38: score = 0; break; //Core i9 7980XE
+                        case 39: score = 0; break; //Core i9 7960X
+                        case 40: score = 0; break; //Core i9 7940X
+                        case 41: score = 0; break; //Core i9 7920X
+                        case 42: score = 0; break; //Core i9 7900X
+                        case 43: score = 0; break; //Core i7 13700
+                        case 44: score = 0; break; //Core i7 13700K
+                        case 45: score = 0; break; //Core i7 13700KF
+                        case 46: score = 0; break; //Core i7 13700F
+                        case 47: score = 0; break; //Core i7 13700T
+                        case 48: score = 0; break; //Core i7 12850HX
+                        case 49: score = 0; break; //Core i7 12800H
+                        case 50: score = 0; break; //Core i7 12800HX
+                        case 51: score = 0; break; //Core i7 12700
+                        case 52: score = 0; break; //Core i7 12700K
+                        case 53: score = 0; break; //Core i7 12700KF
+                        case 54: score = 0; break; //Core i7 12700F
+                        case 55: score = 0; break; //Core i7 12700T
+                        case 56: score = 0; break; //Core i7 12700H
+                        case 57: score = 0; break; //Core i7 12650H
+                        case 58: score = 0; break; //Core i7 12650HX
+                        case 59: score = 0; break; //Core i7 1195G7
+                        case 60: score = 0; break; //Core i7 1195G7 w/IPU
+                        case 61: score = 0; break; //Core i7 1185GRE
+                        case 62: score = 0; break; //Core i7 1185G7E
+                        case 63: score = 0; break; //Core i7 1185G7 w/IPU
+                        case 64: score = 0; break; //Core i7 11850H
+                        case 65: score = 0; break; //Core i7 11850HE
+                        case 66: score = 0; break; //Core i7 11800H
+                        case 67: score = 0; break; //Core i7 1180G7 w/IPU
+                        case 68: score = 0; break; //Core i7 11700
+                        case 69: score = 0; break; //Core i7 11700K
+                        case 70: score = 0; break; //Core i7 11700KF
+                        case 71: score = 0; break; //Core i7 11700F
+                        case 72: score = 0; break; //Core i7 11700T
+                        case 73: score = 0; break; //Core i7 1165G7
+                        case 74: score = 1; break; //Core i7 1165G7 w/IPU
+                        case 75: score = 0; break; //Core i7 11600H
+                        case 76: score = 0; break; //Core i7 1160G7 w/IPU
+                        case 77: score = 0; break; //Core i7 11390H
+                        case 78: score = 0; break; //Core i7 11375H
+                        case 79: score = 0; break; //Core i7 11375H w/IPU
+                        case 80: score = 0; break; //Core i7 11370H w/IPU
+                        case 81: score = 0; break; //Core i7 10750H
+                        case 82: score = 0; break; //Core i7 10710U
+                        case 83: score = 0; break; //Core i7 10700
+                        case 84: score = 0; break; //Core i7 10700K
+                        case 85: score = 0; break; //Core i7 10700KF
+                        case 86: score = 0; break; //Core i7 10700F
+                        case 87: score = 0; break; //Core i7 10700T
+                        case 88: score = 0; break; //Core i7 10700E
+                        case 89: score = 0; break; //Core i7 10700TE
+                        case 90: score = 0; break; //Core i7 1065G7
+                        case 91: score = 0; break; //Core i7 10610U
+                        case 92: score = 0; break; //Core i7 1060G7
+                        case 93: score = 0; break; //Core i7 10510U
+                        case 94: score = 0; break; //Core i7 10510Y
+                        case 95: score = 1; break; //Core i7 9700
+                        case 96: score = 0; break; //Core i7 9700K
+                        case 97: score = 0; break; //Core i7 9700T
+                        case 98: score = 0; break; //Core i7 9700TE
+                        case 99: score = 0; break; //Core i7 8850H
+                        case 100: score = 0; break; //Core i7 8750H
+                        case 101: score = 0; break; //Core i7 8700
+                        case 102: score = 0; break; //Core i7 8700K
+                        case 103: score = 0; break; //Core i7 8700B
+                        case 104: score = 0; break; //Core i7 8569U
+                        case 105: score = 0; break; //Core i7 8665U
+                        case 106: score = 0; break; //Core i7 8650U
+                        case 107: score = 0; break; //Core i7 8565U
+                        case 108: score = 0; break; //Core i7 8559U
+                        case 109: score = 99; break; //Core i7 8557U
+                        case 110: score = 1; break; //Core i7 8550U
+                        case 111: score = 0; break; //Core i7 8500Y
+                        case 112: score = 0; break; //Core i7 8086K
+                        case 113: score = 0; break; //Core i7 7920HQ
+                        case 114: score = 0; break; //Core i7 7900U
+                        case 115: score = 0; break; //Core i7 7820HQ
+                        case 116: score = 0; break; //Core i7 7820HK
+                        case 117: score = 0; break; //Core i7 7820X
+                        case 118: score = 0; break; //Core i7 7800X
+                        case 119: score = 0; break; //Core i7 7740X
+                        case 120: score = 0; break; //Core i7 7700
+                        case 121: score = 0; break; //Core i7 7700K
+                        case 122: score = 0; break; //Core i7 7700T
+                        case 123: score = 0; break; //Core i7 7700HQ
+                        case 124: score = 0; break; //Core i7 7660U
+                        case 125: score = 0; break; //Core i7 7560U
+                        case 126: score = 0; break; //Core i7 7500U
+                        case 127: score = 0; break; //Core i7 7Y75
+                        case 128: score = 0; break; //Core i7 1280P
+                        case 129: score = 0; break; //Core i7 1270P
+                        case 130: score = 0; break; //Core i7 1265U
+                        case 131: score = 0; break; //Core i7 1260P
+                        case 132: score = 0; break; //Core i7 1260U
+                        case 133: score = 0; break; //Core i7 1255U
+                        case 134: score = 2; break; //Core i7 1250U
+                        case 135: score = 0; break; //Core i5 13600
+                        case 136: score = 0; break; //Core i5 13600K
+                        case 137: score = 0; break; //Core i5 13600KF
+                        case 138: score = 0; break; //Core i5 13600T
+                        case 139: score = 0; break; //Core i5 13500
+                        case 140: score = 0; break; //Core i5 13500T
+                        case 141: score = 0; break; //Core i5 13420H
+                        case 142: score = 0; break; //Core i5 13400
+                        case 143: score = 0; break; //Core i5 13400F
+                        case 144: score = 0; break; //Core i5 13400T
+                        case 145: score = 0; break; //Core i5 12600
+                        case 146: score = 0; break; //Core i5 12600K
+                        case 147: score = 0; break; //Core i5 12600KF
+                        case 148: score = 0; break; //Core i5 12600T
+                        case 149: score = 0; break; //Core i5 12600HX
+                        case 150: score = 0; break; //Core i5 12600H
+                        case 151: score = 0; break; //Core i5 12500
+                        case 152: score = 0; break; //Core i5 12500T
+                        case 153: score = 0; break; //Core i5 12500H
+                        case 154: score = 0; break; //Core i5 12450H
+                        case 155: score = 0; break; //Core i5 12450HX
+                        case 156: score = 0; break; //Core i5 12400
+                        case 157: score = 0; break; //Core i5 12400F
+                        case 158: score = 0; break; //Core i5 12400T
+                        case 159: score = 0; break; //Core i5 11600
+                        case 160: score = 0; break; //Core i5 11600K
+                        case 161: score = 0; break; //Core i5 11600KF
+                        case 162: score = 0; break; //Core i5 11600T
+                        case 163: score = 0; break; //Core i5 1155G7
+                        case 164: score = 0; break; //Core i5 11500
+                        case 165: score = 0; break; //Core i5 11500T
+                        case 166: score = 0; break; //Core i5 11500H
+                        case 167: score = 0; break; //Core i5 11500HE
+                        case 168: score = 0; break; //Core i5 1145G7 w/IPU
+                        case 169: score = 23; break; //Core i5 1145G7E w/IPU
+                        case 170: score = 0; break; //Core i5 1145G7E
+                        case 171: score = 0; break; //Core i5 11400
+                        case 172: score = 0; break; //Core i5 11400F
+                        case 173: score = 0; break; //Core i5 11400T
+                        case 174: score = 0; break; // Core i5 11400H
+                        case 175: score = 0; break; // Core i5 1140G7
+                        case 176: score = 0; break; // Core i5 1135G7
+                        case 177: score = 0; break; // Core i5 11320H w/IPU
+                        case 178: score = 0; break; //Core i5 11300H w/IPU
+                        case 179: score = 0; break; //Core i5 1130G7 w/IPU
+                        case 180: score = 0; break; //Core i5 11260H
+                        case 181: score = 0; break; //Core i5 10600
+                        case 182: score = 0; break; //Core i5 10600K
+                        case 183: score = 0; break; //Core i5 10600KF
+                        case 184: score = 0; break; //Core i5 10600T
+                        case 185: score = 0; break; //Core i5 10505
+                        case 186: score = 0; break; //Core i5 10500
+                        case 187: score = 0; break; //Core i5 10500E
+                        case 188: score = 0; break; //Core i5 10500T
+                        case 189: score = 0; break; //Core i5 10500TE
+                        case 190: score = 0; break; //Core i5 10500H
+                        case 191: score = 0; break; //Core i5 10400
+                        case 192: score = 0; break; //Core i5 10400F
+                        case 193: score = 0; break; //Core i5 10400T
+                        case 194: score = 0; break; //Core i5 10210U
+                        case 195: score = 0; break; //Core i5 9600
+                        case 196: score = 0; break; //Core i5 9600K
+                        case 197: score = 0; break; //Core i5 9600KF
+                        case 198: score = 0; break; //Core i5 9600T
+                        case 199: score = 0; break; //Core i5 9500
+                        case 200: score = 0; break; //Core i5 9500E
+                        case 201: score = 0; break; //Core i5 9500F
+                        case 202: score = 0; break; //Core i5 9500T
+                        case 203: score = 0; break; //Core i5 9400
+                        case 204: score = 0; break; //Core i5 9400F
+                        case 205: score = 0; break; //Core i5 9400T
+                        case 206: score = 0; break; //Core i5 8600K
+                        case 207: score = 0; break; //Core i5 8500
+                        case 208: score = 0; break; //Core i5 8500B
+                        case 209: score = 0; break; //Core i5 8400
+                        case 210: score = 0; break; //Core i5 8400H
+                        case 211: score = 0; break; //Core i5 8400B
+                        case 212: score = 0; break; //Core i5 8365U
+                        case 213: score = 0; break; //Core i5 8350U
+                        case 214: score = 0; break; //Core i5 8310Y
+                        case 215: score = 0; break; //Core i5 8300H
+                        case 216: score = 0; break; //Core i5 8279U
+                        case 217: score = 0; break; //Core i5 8269U
+                        case 218: score = 0; break; //Core i5 8265U
+                        case 219: score = 0; break; //Core i5 8260U
+                        case 220: score = 0; break; //Core i5 8259U
+                        case 221: score = 0; break; //Core i5 8257U
+                        case 222: score = 0; break; //Core i5 8250U
+                        case 223: score = 0; break; //Core i5 8210Y
+                        case 224: score = 0; break; //Core i5 8200Y
+                        case 225: score = 0; break; //Core i5 7640X
+                        case 226: score = 0; break; //Core i5 7600
+                        case 227: score = 0; break; //Core i5 7600K
+                        case 228: score = 0; break; //Core i5 7600T
+                        case 229: score = 10; break; //Core i5 7500
+                        case 230: score = 0; break; //Core i5 7500T
+                        case 231: score = 0; break; //Core i5 7440HQ
+                        case 232: score = 0; break; //Core i5 7400
+                        case 233: score = 0; break; //Core i5 7400T
+                        case 234: score = 0; break; //Core i5 7360U
+                        case 235: score = 0; break; //Core i5 7300HQ
+                        case 236: score = 0; break; //Core i5 7300U
+                        case 237: score = 0; break; //Core i5 7287U
+                        case 238: score = 0; break; //Core i5 7267U
+                        case 239: score = 0; break; //Core i5 7260U
+                        case 240: score = 0; break; //Core i5 7200U
+                        case 241: score = 10; break; //Core i5 7Y57
+                        case 242: score = 0; break; //Core i5 7Y54
+                        case 243: score = 0; break; //Core i5 1250P
+                        case 244: score = 0; break; //Core i5 1245U
+                        case 245: score = 0; break; //Core i5 1240P
+                        case 246: score = 0; break; //Core i5 1240U
+                        case 247: score = 54; break; //Core i5 1235U
+                        case 248: score = 5; break; //Core i5 1230U
+                        case 249: score = 0; break; //Core i3 13100
+                        case 250: score = 0; break; //Core i3 13100F
+                        case 251: score = 0; break; //Core i3 13100T
+                        case 252: score = 0; break; //Core i3 12300
+                        case 253: score = 0; break; //Core i3 12300T
+                        case 254: score = 0; break; //Core i3 12100
+                        case 255: score = 0; break; //Core i3 12100F
+                        case 256: score = 0; break; //Core i3 12100T
+                        case 257: score = 0; break; //Core i3 1125G4
+                        case 258: score = 0; break; //Core i3 1125G4 w/IPU
+                        case 259: score = 0; break; //Core i3 1120G4 w/IPU
+                        case 260: score = 0; break; //Core i3 1115GRE
+                        case 261: score = 0; break; //Core i3 1115G4E
+                        case 262: score = 0; break; //Core i3 1115G4
+                        case 263: score = 0; break; //Core i3 1115G4 w/IPU
+                        case 264: score = 0; break; //Core i3 1110G4 w/IPU
+                        case 265: score = 0; break; //Core i3 1110HE
+                        case 266: score = 0; break; //Core i3 10320
+                        case 267: score = 0; break; //Core i3 10300
+                        case 268: score = 0; break; //Core i3 10300T
+                        case 269: score = 0; break; //Core i3 10110Y
+                        case 270: score = 0; break; //Core i3 10100
+                        case 271: score = 0; break; //Core i3 10100F
+                        case 272: score = 0; break; //Core i3 10100T
+                        case 273: score = 0; break; //Core i3 10100E
+                        case 274: score = 0; break; //Core i3 10100TE
+                        case 275: score = 0; break; //Core i3 9350K
+                        case 276: score = 0; break; //Core i3 9350KF
+                        case 277: score = 0; break; //Core i3 9320
+                        case 278: score = 0; break; //Core i3 9300
+                        case 279: score = 0; break; //Core i3 9300T
+                        case 280: score = 0; break; //Core i3 9100
+                        case 281: score = 0; break; //Core i3 9100F
+                        case 282: score = 0; break; //Core i3 9100T
+                        case 283: score = 0; break; //Core i3 9100E
+                        case 284: score = 0; break; //Core i3 9100TE
+                        case 285: score = 0; break; //Core i3 8350K
+                        case 286: score = 0; break; //Core i3 8145U
+                        case 287: score = 0; break; //Core i3 8140U
+                        case 288: score = 0; break; //Core i3 8130U
+                        case 289: score = 0; break; //Core i3 8109U
+                        case 290: score = 0; break; //Core i3 8100
+                        case 291: score = 0; break; //Core i3 8100H
+                        case 292: score = 0; break; //Core i3 8100B
+                        case 293: score = 0; break; //Core i3 7350K
+                        case 294: score = 0; break; //Core i3 7320
+                        case 295: score = 0; break; //Core i3 7300
+                        case 296: score = 0; break; //Core i3 7300T
+                        case 297: score = 0; break; //Core i3 7130U
+                        case 298: score = 0; break; //Core i3 7167U
+                        case 299: score = 0; break; //Core i3 7101E
+                        case 300: score = 0; break; //Core i3 7101TE
+                        case 301: score = 0; break; //Core i3 7100T
+                        case 302: score = 0; break; //Core i3 7100
+                        case 303: score = 0; break; //Core i3 7100H
+                        case 304: score = 0; break; //Core i3 7100U
+                        case 305: score = 0; break; //Core i3 1220P
+                        case 306: score = 0; break; //Core i3 1215U
+                        case 307: score = 0; break; //Core i3 1210U
+                        case 309: score = 0; break; //Xeon W-11965MRE
+                        case 310: score = 0; break; //Xeon W-11955M
+                        case 311: score = 0; break; //Xeon W-11865MLE
+                        case 312: score = 0; break; //Xeon W-11855M
+                        case 313: score = 0; break; //Xeon W-11555MRE
+                        case 314: score = 0; break; //Xeon W-11555MLE
+                        case 315: score = 0; break; //Xeon W-11155MRE
+                        case 316: score = 96; break; //Xeon W-11155MLE
                     }
                 }
             }
@@ -1353,12 +1356,14 @@ namespace CPU_Benchmark
         }
         private void start_Click(object sender, RoutedEventArgs e)
         {
-            if (Amd.SelectedIndex == 207) { AMDcheck = true; }
-            if (Intel.SelectedIndex == 308) { Intelcheck = true; }
-            
-            if (Intel.SelectedIndex == 0) { Intelcheck = true; }
-            if (Amd.SelectedIndex == 0) { AMDcheck = true; }
-            if (Amd.SelectedIndex != 207 && Amd.SelectedIndex != 0 && Intel.SelectedIndex != 308 &&Intel.SelectedIndex != 0) { AMDcheck = false; Intelcheck = false; }
+            if (String.IsNullOrEmpty(cpuIn)) { cpuCheck(); return; }
+            else if (Amd.SelectedIndex == 207 && Intel.SelectedIndex == 308 || Amd.SelectedIndex == 0 && Intel.SelectedIndex == 0) { AMDcheck = true; Intelcheck = true; }
+            else if (Amd.SelectedIndex != 207 && Amd.SelectedIndex != 0 || Intel.SelectedIndex != 308 && Intel.SelectedIndex != 0)
+            {
+                if (Amd.SelectedIndex == 0 && Intel.SelectedIndex != 308) { Intelcheck = false; AMDcheck = true; }
+                else if (Intel.SelectedIndex == 0 && Amd.SelectedIndex != 207) { Intelcheck = true; AMDcheck = false; }
+                else { AMDcheck = false; Intelcheck = false; }
+            }
             cpuListCheck(AMDcheck, Intelcheck);
         }
         private void mode_Click(object sender, RoutedEventArgs e) //nějak to funguje radši na to šahat nebudu
@@ -1398,5 +1403,7 @@ namespace CPU_Benchmark
                 Process.Start(psi);
             }
         } //sice to neni hypertext ale funguje to
+
+        private void cpuInput_KeyDown(object sender, KeyEventArgs e) { if (e.Key == Key.Enter) { start_Click(sender, e); } }
     }
 }
