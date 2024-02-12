@@ -61,7 +61,7 @@ namespace CPU_Benchmark
                                                 "Core i7 11850H","Core i7 11850HE","Core i7 11800H","Core i7 1180G7 w/IPU","Core i7 11700","Core i7 11700K", "Core i7 11700KF","Core i7 11700F","Core i7 11700T","Core i7 1165G7","Core i7 1165G7 w/IPU",
                                                 "Core i7 11600H","Core i7 1160G7 w/IPU","Core i7 11390H","Core i7 11375H","Core i7 11375H w/IPU","Core i7 11370H w/IPU","Core i7 10750H","Core i7 10710U","Core i7 10700","Core i7 10700K","Core i7 10700KF",
                                                 "Core i7 10700F","Core i7 10700T","Core i7 10700E","Core i7 10700TE","Core i7 1065G7","Core i7 10610U","Core i7 1060G7","Core i7 10510U","Core i7 10510Y","Core i7 9700","Core i7 9700K","Core i7 9700T",
-                                                "Core i7 9700TE","Core i7 8850H","Core i7 8750H","Core i7 8700","Core i7 8700K","Core i7 8700B","Core i7 8665U","Core i7 8650U","Core i7 8569U","Core i7 8565U","Core i7 8559U","Core i7 8557U","Core i7 8550U",
+                                                "Core i7 9700TE","Core i7 8850H","Core i7 8750H","Core i7 8700","Core i7 8700K","Core i7 8700B","Core i7 8569U","Core i7 8665U","Core i7 8650U","Core i7 8565U","Core i7 8559U","Core i7 8557U","Core i7 8550U",
                                                 "Core i7 8500Y","Core i7 8086K","Core i7 7920HQ","Core i7 7900U","Core i7 7820HQ","Core i7 7820HK","Core i7 7820X","Core i7 7800X","Core i7 7740X","Core i7 7700","Core i7 7700K","Core i7 7700T","Core i7 7700HQ",
                                                 "Core i7 7660U","Core i7 7560U","Core i7 7500U","Core i7 7Y75",
 
@@ -74,7 +74,7 @@ namespace CPU_Benchmark
                                                 "Core i5 10600","Core i5 10600K","Core i5 10600KF","Core i5 10600T","Core i5 10505","Core i5 10500","Core i5 10500E","Core i5 10500T","Core i5 10500TE","Core i5 10500H","Core i5 10400","Core i5 10400F",
                                                 "Core i5 10400T","Core i5 10210U","Core i5 9600","Core i5 9600K","Core i5 9600KF","Core i5 9600T","Core i5 9500","Core i5 9500E","Core i5 9500F","Core i5 9500T","Core i5 9400","Core i5 9400F","Core i5 9400T",
                                                 "Core i5 8600K","Core i5 8500","Core i5 8500B","Core i5 8400","Core i5 8400H","Core i5 8400B","Core i5 8365U","Core i5 8350U","Core i5 8310Y","Core i5 8300H","Core i5 8279U","Core i5 8269U","Core i5 8265U",
-                                                "Core i5 8260U","Core i5 8259U","Core i5 8257U","Core i5 8250U","Core i5 8210Y","Core i5 8200Y","Core i5 7640X","Core i5 7600","Core i5 7600K","Core i5 7600T","Core i5 7500", "Core i5 7500T","Core i5 7440HQ",
+                                                "Core i5 8260U","Core i5 8259U","Core i5 8257U","Core i5 8250U","Core i5 8210Y","Core i5 8200Y","Core i5 7640X","Core i5 7600","Core i5 7600K","Core i5 7600T","Core i5 7500","Core i5 7500T","Core i5 7440HQ",
                                                 "Core i5 7400","Core i5 7400T","Core i5 7360U","Core i5 7300HQ","Core i5 7300U","Core i5 7287U","Core i5 7267U","Core i5 7260U","Core i5 7200U","Core i5 7Y57","Core i5 7Y54",
 
                                                 "Core i5 1250P","Core i5 1245U","Core i5 1240P","Core i5 1240U","Core i5 1235U","Core i5 1230U",
