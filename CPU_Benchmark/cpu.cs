@@ -52,15 +52,15 @@ namespace CPU_Benchmark
                                                 "EPYC 3451","EPYC 3401","EPYC 3351","EPYC 3301","EPYC 3255","EPYC 3251","EPYC 3201","EPYC 3151","EPYC 3101",};
 
         private static string[] intelPole = {"INTEL","Core i9 13900","Core i9 13900K","Core i9 13900KS","Core i9 13900KF","Core i9 13900F","Core i9 13900T","Core i9 12950HX","Core i9 12900","Core i9 12900K","Core i9 12900KS","Core i9 12900KF",
-                                                "Core i9 12900F","Core i9 12900T","Core i9 12900H","Core i9 12900HX","Core i9 12900HK","Core i9 11980HK","Core i9 11950H","Core i9 10910","Core i9 11900","Core i9 11900K","Core i9 11900KF",
-                                                "Core i9 11900F","Core i9 11900T","Core i9 11900H","Core i9 10900","Core i9 10900K","Core i9 10900KF","Core i9 10900F","Core i9 10900E","Core i9 10900T","Core i9 10850K","Core i9 9900",
+                                                "Core i9 12900F","Core i9 12900T","Core i9 12900H","Core i9 12900HX","Core i9 12900HK","Core i9 11980HK","Core i9 11950H","Core i9 11900","Core i9 11900K","Core i9 11900KF",
+                                                "Core i9 11900F","Core i9 11900T","Core i9 11900H","Core i9 10910","Core i9 10900","Core i9 10900K","Core i9 10900KF","Core i9 10900F","Core i9 10900E","Core i9 10900T","Core i9 10850K","Core i9 9900",
                                                 "Core i9 9900K","Core i9 9900KS","Core i9 9900T","Core i9 8950HK","Core i9 7980XE","Core i9 7960X","Core i9 7940X","Core i9 7920X","Core i9 7900X",
 
                                                 "Core i7 13700","Core i7 13700K","Core i7 13700KF","Core i7 13700F","Core i7 13700T","Core i7 12850HX","Core i7 12800H","Core i7 12800HX","Core i7 12700","Core i7 12700K","Core i7 12700KF",
                                                 "Core i7 12700F","Core i7 12700T","Core i7 12700H","Core i7 12650H","Core i7 12650HX","Core i7 1195G7","Core i7 1195G7 w/IPU","Core i7 1185GRE","Core i7 1185G7E","Core i7 1185G7 w/IPU",
                                                 "Core i7 11850H","Core i7 11850HE","Core i7 11800H","Core i7 1180G7 w/IPU","Core i7 11700","Core i7 11700K", "Core i7 11700KF","Core i7 11700F","Core i7 11700T","Core i7 1165G7","Core i7 1165G7 w/IPU",
                                                 "Core i7 11600H","Core i7 1160G7 w/IPU","Core i7 11390H","Core i7 11375H","Core i7 11375H w/IPU","Core i7 11370H w/IPU","Core i7 10750H","Core i7 10710U","Core i7 10700","Core i7 10700K","Core i7 10700KF",
-                                                "Core i7 10700F","Core i7 10700T","Core i7 10700E","Core i7 10700TE","Core i7 1065G7","Core i7 1060G7","Core i7 10610U","Core i7 10510U","Core i7 10510Y","Core i7 9700","Core i7 9700K","Core i7 9700T",
+                                                "Core i7 10700F","Core i7 10700T","Core i7 10700E","Core i7 10700TE","Core i7 1065G7","Core i7 10610U","Core i7 1060G7","Core i7 10510U","Core i7 10510Y","Core i7 9700","Core i7 9700K","Core i7 9700T",
                                                 "Core i7 9700TE","Core i7 8850H","Core i7 8750H","Core i7 8700","Core i7 8700K","Core i7 8700B","Core i7 8665U","Core i7 8650U","Core i7 8569U","Core i7 8565U","Core i7 8559U","Core i7 8557U","Core i7 8550U",
                                                 "Core i7 8500Y","Core i7 8086K","Core i7 7920HQ","Core i7 7900U","Core i7 7820HQ","Core i7 7820HK","Core i7 7820X","Core i7 7800X","Core i7 7740X","Core i7 7700","Core i7 7700K","Core i7 7700T","Core i7 7700HQ",
                                                 "Core i7 7660U","Core i7 7560U","Core i7 7500U","Core i7 7Y75",
@@ -97,5 +97,6 @@ namespace CPU_Benchmark
         public List<string> intel = new List<string>(intelPole);
         public List<string> xeon = new List<string>(xeonPole);
         //jestli jsem tohle cely mohl udelat do dict a dat tam score z benchmarku tak kys :)
+        //zkusit udělat tohle celý do dict a dát do novýho branche
     }
 }
