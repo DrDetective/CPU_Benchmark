@@ -99,7 +99,7 @@ namespace CPU_Benchmark
                         case 2: score = 648; break;  //Ryzen Threadripper PRO 5975WX
                         case 3: score = 627; break;  //Ryzen Threadripper PRO 5965WX
                         case 4: score = 626; break;  //Ryzen Threadripper PRO 5955WX
-                        case 5: score = ; break;  //Ryzen Threadripper PRO 5945WX
+                        case 5: score = 628; break;  //Ryzen Threadripper PRO 5945WX
                         case 6: score = 510; break;  //Ryzen Threadripper PRO 3995WX
                         case 7: score = 380; break;  //Ryzen Threadripper 3990X
                         case 8: score = 529; break;  //Ryzen Threadripper PRO 3975WX
@@ -732,7 +732,7 @@ namespace CPU_Benchmark
                         case 2: score = 25121; break; //Ryzen Threadripper PRO 5975WX
                         case 3: score = 18976; break; //Ryzen Threadripper PRO 5965WX
                         case 4: score = 12767; break; //Ryzen Threadripper PRO 5955WX
-                        case 5: score = ; break; //Ryzen Threadripper PRO 5945WX
+                        case 5: score = 9680; break; //Ryzen Threadripper PRO 5945WX
                         case 6: score = 28096; break; //Ryzen Threadripper PRO 3995WX
                         case 7: score = 27670; break; //Ryzen Threadripper 3990X
                         case 8: score = 20924; break; //Ryzen Threadripper PRO 3975WX
